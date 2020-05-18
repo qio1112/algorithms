@@ -80,6 +80,10 @@ public class Graph {
         return adjList.get(v).keySet();
     }
 
+    public void addEdge(int from, int to, Integer weight) {
+        addDirectedVertices(new Vertex(from), new Vertex(to), weight);
+    }
+
     public Map<Vertex, Map<Vertex, List<Integer>>> getAdjList() {
         return adjList;
     }
@@ -97,15 +101,28 @@ public class Graph {
         return new Graph(edgeArr);
     }
 
+    // undirected, with cycle, unlinked
     public static Graph generateUndirectedGraph1() {
         int[][] edgeArr = {{1, 2}, {2, 1}, {1, 3}, {3, 1}, {1, 4}, {4, 1}, {2, 3}, {3, 2}, {2, 4}, {4, 2}, {3, 5}, {5, 3},
                 {4, 6}, {6, 4}, {5, 6}, {6, 5}, {5, 7}, {7, 5}, {6, 8}, {8, 6}, {7, 9}, {9, 7}, {10, 11}, {11, 10}};
         return new Graph(edgeArr);
     }
 
+    public static Graph generateUndirectedGraph2() {
+        int[][] edgeArr = {{1, 7}, {7, 1}, {2, 7}, {7, 2}, {3, 7}, {7, 3}, {4, 7}, {7, 4}, {5, 7}, {7, 5}, {6, 7}, {7, 6}};
+        return new Graph(edgeArr);
+    }
+
+    // directed, with cycle
     public static Graph generateDirectedGraph1() {
         int[][] edgeArr = {{1, 2}, {2, 3}, {2, 6}, {3, 4}, {3, 5}, {4, 2}, {4, 4}, {4, 7}, {5, 3}, {6, 8}, {7, 5}, {7, 7},
                 {8, 6}, {9, 4}, {9, 10}};
+        return new Graph(edgeArr);
+    }
+
+    // directed, no cycle
+    public static Graph generateDirectedGraph2() {
+        int[][] edgeArr = {{1, 2}, {1, 3}, {2, 9}, {3, 2}, {3, 4}, {5, 4}, {5, 6}, {6, 7}, {7, 4}, {7, 8}, {8, 9}};
         return new Graph(edgeArr);
     }
 
