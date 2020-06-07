@@ -113,6 +113,13 @@ public class Graph {
         return new Graph(edgeArr);
     }
 
+    public static Graph generateUndirectedGraph3() {
+        int[][] edgeArr = {{1, 2}, {2, 1}, {1, 3}, {3, 1}, {2, 3}, {3, 2}, {2, 4}, {4, 2}, {4, 5}, {5, 4}, {4, 6}, {6, 4},
+                {5, 6}, {6, 5}, {6, 7}, {7, 6}, {8, 9}, {9, 8}, {9, 10}, {10, 9}, {10, 11}, {11, 10}, {10, 12}, {12, 10},
+                {11, 12}, {12, 11}};
+        return new Graph(edgeArr);
+    }
+
     // directed, with cycle
     public static Graph generateDirectedGraph1() {
         int[][] edgeArr = {{1, 2}, {2, 3}, {2, 6}, {3, 4}, {3, 5}, {4, 2}, {4, 4}, {4, 7}, {5, 3}, {6, 8}, {7, 5}, {7, 7},
@@ -123,6 +130,11 @@ public class Graph {
     // directed, no cycle
     public static Graph generateDirectedGraph2() {
         int[][] edgeArr = {{1, 2}, {1, 3}, {2, 9}, {3, 2}, {3, 4}, {5, 4}, {5, 6}, {6, 7}, {7, 4}, {7, 8}, {8, 9}};
+        return new Graph(edgeArr);
+    }
+
+    public static Graph generateDirectedGraph3() {
+        int[][] edgeArr = {{3, 1}, {2, 3}, {4, 0}, {4, 1}, {5, 0}, {5, 2}};
         return new Graph(edgeArr);
     }
 

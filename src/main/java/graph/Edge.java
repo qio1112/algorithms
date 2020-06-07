@@ -48,4 +48,9 @@ public class Edge {
         Edge other = (Edge) obj;
         return this.from.equals(other.getFrom()) && this.to.equals(other.getTo()) && this.weight == other.getWeight();
     }
+
+    @Override
+    public String toString() {
+        return "FROM " + from + " TO " + to;
+    }
 }
