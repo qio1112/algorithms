@@ -108,10 +108,17 @@ public class GraphTest {
 
     @Test
     public void testGetBridges() {
-        Set<Edge> result = GraphUtils.getBridges(Graph.generateUndirectedGraph3());
+        Set<Edge> result = GraphUtils.getBridges(Graph.generateUndirectedGraph4());
+        Set<Edge> result2 = GraphUtils.getBridges(Graph.generateUndirectedGraph3());
         Iterator<Edge> itr = result.iterator();
         while (itr.hasNext()) {
             Edge e = itr.next();
+            System.out.println(e);
+        }
+        System.out.println("=============");
+        Iterator<Edge> itr2 = result2.iterator();
+        while (itr2.hasNext()) {
+            Edge e = itr2.next();
             System.out.println(e);
         }
     }

@@ -120,6 +120,11 @@ public class Graph {
         return new Graph(edgeArr);
     }
 
+    public static Graph generateUndirectedGraph4() {
+        int[][] edgeArr = {{0, 1}, {1, 0}, {0, 2}, {2, 0}, {0, 3}, {3, 0}, {0, 4}, {4, 0}, {2, 3}, {3, 2}, {2, 4}, {4, 2}, {3, 4}, {4, 3}};
+        return new Graph(edgeArr);
+    }
+
     // directed, with cycle
     public static Graph generateDirectedGraph1() {
         int[][] edgeArr = {{1, 2}, {2, 3}, {2, 6}, {3, 4}, {3, 5}, {4, 2}, {4, 4}, {4, 7}, {5, 3}, {6, 8}, {7, 5}, {7, 7},
